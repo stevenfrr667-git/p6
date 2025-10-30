@@ -1,8 +1,11 @@
+/* =========================================================
+   == 1) RESET / NORMALIZE
+   ========================================================= */
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -28,10 +31,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-	background-color: #F9F6F2;
-}
 ol, ul {
 	list-style: none;
 }
@@ -48,19 +47,22 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
+
+/* =========================================================
+   == 2) BASE / TYPO / LIENS
+   ========================================================= */
+
+body {
+	line-height: 1;
+	background-color: #F9F6F2;
+}
+
 body {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
-}
-header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
-}
-section {
-	margin: 50px 0
 }
 
 h1{
@@ -85,12 +87,34 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+a {
+	text-decoration: none;
+	color: #3D3D3D;
+	font-weight:900;
+}
+
+
+/* =========================================================
+   == 3) LAYOUT GLOBAL (Header, Sections, Nav)
+   ========================================================= */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0
+}
+
+section {
+	margin: 50px 0
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
+
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
@@ -99,13 +123,21 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+
+/* =========================================================
+   == 4) PAGES & SECTIONS : Introduction
+   ========================================================= */
+
 #introduction {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
+
 #introduction img {
 	display: block;
 	margin: auto;
@@ -115,6 +147,7 @@ li:hover {
 #introduction article {
 	flex: 1
 }
+
 #introduction h2 {
 	margin-bottom: 1em;
 }
@@ -122,10 +155,17 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+
+/* =========================================================
+   == 5) PAGES & SECTIONS : Portfolio / Galerie
+   ========================================================= */
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -136,19 +176,26 @@ li:hover {
 
 .gallery img {
 	width: 100%;
-
 }
+
+
+/* =========================================================
+   == 6) PAGES & SECTIONS : Contact
+   ========================================================= */
+
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
+
 #contact > * {
 	text-align: center;
-
 }
+
 #contact h2{
 	margin-bottom: 20px;
 }
+
 #contact form {
 	text-align: left;
 	margin-top:30px;
@@ -162,9 +209,11 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #contact label {
 	margin: 2em 0 1em 0;
 }
+
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
@@ -181,6 +230,11 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+
+/* =========================================================
+   == 7) FOOTER
+   ========================================================= */
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
@@ -188,7 +242,13 @@ footer nav ul {
 	padding: 20px 0;
 	width: 100%;
 }
-.filter-btn {
+
+
+/* =========================================================
+   == 8) COMPOSANTS : Boutons & Filtres
+   ========================================================= */
+
+button {
 	background-color: white;
 	color: #1D6154;
 	border: 2px solid #1D6154;
@@ -198,12 +258,86 @@ footer nav ul {
 	border-radius: 20px;
 	font-weight: 700;
 }
-.filter-btn:hover {
+
+button:hover {
 	background-color: #1D6154;
 	color: white;
 	cursor: pointer;
 }
+
 .filter-section {
 	text-align: center;
 	margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   == 9) MESSAGES / UTILITAIRES
+   ========================================================= */
+
+.forgot-message {
+	text-align: center;
+	margin-top: 10px;
+	color: #3D3D3D;
+	margin-bottom: 230px;
+}
+
+
+/* =========================================================
+   == 10) PAGE VARIANTE : Login
+   ========================================================= */
+
+.body-login .footer nav ul {
+	justify-content: center;
+	text-align: end;
+	background-color: #F9F6F2;
+}
+
+.body-login {
+	background-color: #F9F6F2;
+	max-width: none;
+}
+
+.body-login header {
+	max-width: 1140px;
+	margin: 50px auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.login-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 100px;
+	gap: 20px;
+}
+
+.login-section form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.login-section input {
+	width: 300px;
+	padding: 10px;
+	font-size: 1em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.login-section input[type="submit"] {
+	width: auto;
+	background-color: #1D6154;
+	color: white;
+	border-radius: 20px;
+	padding: 10px 20px;
+	font-family: 'Syne';
+	font-weight: 700;
+}
+
+.login-section input[type="submit"]:hover {
+	background-color: #145043;
+	cursor: pointer;
 }
