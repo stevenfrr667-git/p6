@@ -22,9 +22,9 @@ function renderGallery(list) {
 
 // Charge les works une fois
 async function createWorksElement() {
-  const url = "http://localhost:5678/api/works";
+  const urlWorks = "http://localhost:5678/api/works";
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlWorks);
     if (!response.ok) throw new Error(`Response status: ${response.status}`);
     ALL_WORKS = await response.json();
     renderGallery(ALL_WORKS); // affichage initial: tout
@@ -52,9 +52,9 @@ function handleFilterClick(btn) {
 
 // Crée les boutons de catégories + branche les clics
 async function createCategoriesElement() {
-  const url = "http://localhost:5678/api/categories";
+  const urlCategorie = "http://localhost:5678/api/categories";
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlCategorie);
     if (!response.ok) throw new Error(`Response status: ${response.status}`);
     CATEGORIES = await response.json();
 
@@ -86,3 +86,30 @@ async function createCategoriesElement() {
   }
 }
 createCategoriesElement();
+
+
+document.querySelector("#loginForm").addEventListener("submit", async (event) => {
+  event.preventDefault(); // Empêche le rechargement de la page
+
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
+  const urlLogin = "http://localhost:5678/api/users/login";
+
+  // Envoie la requête POST
+  const response = await fetch(urlLogin, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email, password })
+  });
+
+  // Traite la réponse
+  if (response.ok) {
+    const data = await response.json();
+    console.log("Connexion réussie :", data);
+  } else {
+    console.error("Erreur lors de la connexion");
+  }
+});
+

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Sophie Bluel</title>
+    <title>Login-page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,24 +18,24 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<a href="./login-page/login.html">
-			<li>login</li>
-			</a>
+			<a href="#"><li>login</li></a>
 			<li><img src="../assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
-    <section class="login-section" id="Login">
-		<h2>Log in</h2>
-		<form action="#" method="post">
-			<label for="E-mail">E-mail</label>
-			<input type="text" name="E-mail" id="E-mail">
-			<label for="Mot de passe">Mot de passe</label>
-			<input type="Mot de passe" name="Mot de passe" id="Mot de passe">
-			<input type="submit" value="Se connecter">
-            <a class="forgot-message" href=".forgotpage">Mot de passe oublié?</a>
-		</form>
-	</section>
+    <section class="login-section" id="login">
+  <h2>Log in</h2>
+  <form id="loginForm" action="#" method="post">
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="password">Mot de passe</label>
+    <input type="password" name="password" id="password" required>
+
+    <input type="submit" value="Se connecter">
+    <a class="forgot-message" href="./forgotpage.html">Mot de passe oublié ?</a>
+  </form>
+</section>
     <footer>
 	<nav>
 		<ul>
